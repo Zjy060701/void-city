@@ -470,6 +470,15 @@ body[data-theme] .setting-row{background:var(--district-soft)}body[data-theme] .
   .ranking{max-width:112px}.dash-btn{right:8px;bottom:calc(10px + env(safe-area-inset-bottom))}
 }
 
+/* Keep the header inside the visible area on phones with browser and system bars. */
+@media(max-width:700px){
+ .topbar{position:fixed!important;top:env(safe-area-inset-top,0px)!important;left:0!important;right:0!important;width:100%!important;height:64px!important;z-index:90!important;display:flex!important;visibility:visible!important;transform:none!important}
+ .topbar .brand{flex:0 1 auto;min-width:0;font-size:14px;letter-spacing:0}.topbar .brand small{font-size:7px;letter-spacing:2px}
+ .top-actions{flex:0 0 auto;display:flex!important;align-items:center;gap:4px}.top-actions button{min-height:40px}.profile-button small{display:inline!important;font-size:9px}.music-help{display:none!important}
+ #menu{top:calc(64px + env(safe-area-inset-top,0px))!important}
+ .guide-card:not(.guide-inline){max-width:calc(100vw - 20px)!important;box-sizing:border-box}
+}
+
 </style></head>
 <body data-theme="home" data-standalone="true">
 <canvas id="game" aria-label="黑洞街区游戏地图"></canvas>
