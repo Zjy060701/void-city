@@ -454,6 +454,22 @@ body[data-theme] .setting-row{background:var(--district-soft)}body[data-theme] .
 #mode-dialog .modal>button.primary{flex:none}
 @media(max-height:800px){#mode-dialog .modal{padding:clamp(12px,2vh,22px)} #mode-dialog .modal h2{margin:4px 0;font-size:clamp(22px,3.5vh,30px)} #mode-dialog .modal>p{margin:4px 0 6px} #district-picker .district-globe{height:clamp(75px,17vh,130px)} #district-picker .district-carousel>[data-district]{min-height:clamp(72px,13vh,100px)} #mode-dialog .primary{padding:10px 16px} #mode-dialog .secondary{margin-top:5px;padding:4px}}
 
+/* Responsive layout: preserve access to dialog controls on short screens. */
+@media(max-width:700px){
+  .centered{padding:8px;align-items:center}
+  .centered .modal{box-sizing:border-box;max-width:calc(100vw - 16px);max-height:calc(100dvh - 16px);overflow-y:auto;overscroll-behavior:contain}
+  #mode-dialog .modal,#profile .profile-modal{max-height:calc(100dvh - 16px)}
+  .top-actions{min-width:0}.top-actions button{min-width:0}
+  .profile-modal .nickname-tools{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .profile-modal .nickname-tools small{min-width:0;flex:1 1 120px}
+  .district-carousel>[data-district] em{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+  .reset-level-progress{height:auto;min-height:0}
+}
+@media(max-width:400px){
+  .topbar{padding-inline:8px}.top-actions{gap:3px}.music-control,.profile-button,.pause-control{padding-inline:6px}
+  .ranking{max-width:112px}.dash-btn{right:8px;bottom:calc(10px + env(safe-area-inset-bottom))}
+}
+
 </style></head>
 <body data-theme="home" data-standalone="true">
 <canvas id="game" aria-label="黑洞街区游戏地图"></canvas>
