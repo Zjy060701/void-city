@@ -502,6 +502,17 @@ body[data-theme] .setting-row{background:var(--district-soft)}body[data-theme] .
  .guide-card.guide-inline{position:relative!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;transform:none!important;margin:0 0 8px!important;z-index:2!important}
 }
 @media(max-width:700px){.guide-card.guide-inline.guide-preview{position:absolute!important;top:auto!important;bottom:10px!important;left:16px!important;right:16px!important;width:auto!important}}
+/* iOS keeps form fields at 16px to avoid automatic input zoom. */
+@media(max-width:700px){
+ input,textarea,select,#nickname,.modal input{font-size:16px!important}
+ #shop.centered:not(.hidden),#profile.centered:not(.hidden),#crop-panel.centered:not(.hidden){z-index:120!important}
+ #shop .skin-preview-panel{z-index:15!important;inset:0!important;padding:clamp(12px,3vw,20px)!important;display:flex;flex-direction:column;align-items:stretch;gap:8px;overflow-y:auto!important}
+ #shop .skin-preview-panel.hidden{display:none!important}
+ #shop .skin-preview-back{position:relative!important;top:auto!important;left:auto!important;align-self:flex-start;flex:none;z-index:3!important;min-height:40px}
+ #shop .skin-preview-display{flex:0 1 auto;min-height:0}
+ #shop .skin-preview-stage{height:clamp(130px,25dvh,220px)!important}
+ #shop .skin-preview-copy{flex:0 0 auto}
+}
 
 </style></head>
 <body data-theme="home" data-standalone="true">
